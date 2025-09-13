@@ -19,11 +19,11 @@ jobs:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
     - name: Add EC2 host to known hosts
-      run: ssh-keyscan -H 3.110.81.28 >> ~/.ssh/known_hosts
+      run: ssh-keyscan -H 15.206.167.55 >> ~/.ssh/known_hosts
 
     - name: Create symlinks and deploy to EC2
       run: |
-        ssh ubuntu@3.110.81.28 -t "
+        ssh ubuntu@15.206.167.55 -t "
           export NVM_DIR=\"\$HOME/.nvm\" && 
           [ -s \"\$NVM_DIR/nvm.sh\" ] && . \"\$NVM_DIR/nvm.sh\" && 
           
